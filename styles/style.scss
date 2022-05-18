@@ -1,6 +1,12 @@
 @import "bootstrap_manage";
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
 
+// Variables
+$lightGreen_color: #F3F9F6;
+$main_color: #0C8543;
+$gray_color: #F6F6F6;
+$main_fontFamily: 'Montserrat', sans-serif;
+
 // Mixins
 @mixin font-group {
   font-family: $main_fontFamily;
@@ -8,11 +14,39 @@
   font-weight: 500;
 }
 
-// Variables
-$lightGreen_color: #F3F9F6;
-$main_color: #0C8543;
-$gray_color: #F6F6F6;
-$main_fontFamily: 'Montserrat', sans-serif;
+//Common classes
+.general-text {
+  @include font-group;
+  font-size: 16px;
+  line-height: 24px;
+  @include media-breakpoint-up(lg) {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  @at-root {
+    h1#{&} {
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 26px;
+      text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 0;
+      @include media-breakpoint-up(lg) {
+        font-size: 45px;
+        line-height: 60px;
+      }
+    }
+
+    h2#{&} {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 26px;
+      @include media-breakpoint-up(lg) {
+        font-size: 27px;
+        line-height: 36px;
+      }
+    }
+  }
+}
 
 // Header and footer style
 .menuCommon {
@@ -109,10 +143,6 @@ $main_fontFamily: 'Montserrat', sans-serif;
 
   &_lightGreen {
     background-color: $lightGreen_color;
-    @include media-breakpoint-up(lg) {
-      font-size: 18px;
-      line-height: 24px;
-    }
   }
 
   &_gray {
@@ -120,37 +150,6 @@ $main_fontFamily: 'Montserrat', sans-serif;
   }
 
   &__text {
-    @include font-group;
-    font-size: 16px;
-    line-height: 24px;
-    @include media-breakpoint-up(lg) {
-      font-size: 18px;
-      line-height: 24px;
-    }
-    @at-root {
-      h1#{&} {
-        font-size: 22px;
-        font-weight: 600;
-        line-height: 26px;
-        text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-        margin-bottom: 0;
-        @include media-breakpoint-up(lg) {
-          font-size: 45px;
-          line-height: 60px;
-        }
-      }
-
-      h2#{&} {
-        font-size: 20px;
-        font-weight: 700;
-        line-height: 26px;
-        @include media-breakpoint-up(lg) {
-          font-size: 27px;
-          line-height: 36px;
-        }
-      }
-    }
-
     &_green {
       color: $main_color;
     }
@@ -162,11 +161,14 @@ $main_fontFamily: 'Montserrat', sans-serif;
   @include media-breakpoint-up(lg) {
     padding-top: 50px;
   }
+
   .col {
     padding-bottom: 8px;
+
     &:nth-last-child(-n+2) {
       padding-bottom: 0;
     }
+
     @include media-breakpoint-up(lg) {
       &:nth-last-child(-n+4) {
         padding-bottom: 0;
@@ -214,6 +216,74 @@ $main_fontFamily: 'Montserrat', sans-serif;
     &_mobile {
       @include media-breakpoint-up(lg) {
         display: none;
+      }
+    }
+  }
+}
+
+.imgItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &:not(:last-child) {
+    margin-bottom: 30px;
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 40px;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    flex-direction: row;
+  }
+
+  &_reverse {
+    @include media-breakpoint-up(lg) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__title {
+    margin-bottom: 15px;
+  }
+
+  &__desc {
+    margin-bottom: 20px;
+  }
+
+  &__images {
+    flex: 1 0 auto;
+
+    @include media-breakpoint-up(lg) {
+      margin-left: 30px;
+    }
+
+    .imgItem_reverse & {
+      @include media-breakpoint-up(lg) {
+        margin-left: 0;
+        margin-right: 30px;
+      }
+    }
+
+    &_pos-rel {
+      position: relative;
+    }
+
+    img {
+      max-width: 100%;
+
+      &:nth-child(2) {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        width: 200px;
+        height: 72.24px;
+        @include media-breakpoint-up(lg) {
+          top: -20px;
+          right: -20px;
+          width: 240px;
+          height: 86.68px;
+        }
       }
     }
   }
