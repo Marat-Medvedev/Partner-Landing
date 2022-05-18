@@ -1,5 +1,152 @@
 @import "bootstrap_manage";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
 
 // Variables
+$lightGreen_color: #F3F9F6;
+$main_color: #0C8543;
+$gray_color: #F6F6F6;
+$main_fontFamily: 'Montserrat', sans-serif;
 
-// Common
+// Header and footer style
+.menuCommon {
+  text-align: center;
+
+  @at-root {
+    header#{&} {
+      border: 1px solid #E0E0E0;
+
+      .container {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        @include media-breakpoint-up(lg) {
+          padding-top: 20px;
+          padding-bottom: 20px;
+        }
+      }
+    }
+
+    footer#{&} {
+      background-color: $main_color;
+      @include media-breakpoint-up(lg) {
+        text-align: left;
+      }
+
+      .container {
+        padding-top: 25px;
+        padding-bottom: 25px;
+      }
+    }
+  }
+
+  .logoCommon {
+    text-align: center;
+    width: 150px;
+    height: 50px;
+    @include media-breakpoint-up(lg) {
+      width: 168px;
+      height: 56px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 25px 0;
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 0;
+    }
+
+    a {
+      font-family: $main_fontFamily;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+      color: #FFFFFF;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &:not(:first-child) {
+        padding-top: 15px;
+        @include media-breakpoint-up(lg) {
+          padding-top: 0;
+          padding-left: 35px;
+        }
+      }
+    }
+  }
+
+  &__rights {
+    font-family: $main_fontFamily;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: #FFFFFF;
+  }
+}
+
+// Main content style
+.blockMain {
+  .container {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    @include media-breakpoint-up(lg) {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+  }
+
+  &_lightGreen {
+    background-color: $lightGreen_color;
+    @include media-breakpoint-up(lg) {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  &_gray {
+    background-color: $gray_color;
+  }
+
+  &__text {
+    font-family: $main_fontFamily;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    @include media-breakpoint-up(lg) {
+      font-size: 18px;
+      line-height: 24px;
+    }
+    @at-root {
+      h1#{&} {
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 26px;
+        text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+        @include media-breakpoint-up(lg) {
+          font-size: 45px;
+          line-height: 60px;
+        }
+      }
+
+      h2#{&} {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 26px;
+        @include media-breakpoint-up(lg) {
+          font-size: 27px;
+          line-height: 36px;
+        }
+      }
+    }
+  }
+}
