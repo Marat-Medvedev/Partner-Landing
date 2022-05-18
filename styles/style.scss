@@ -1,6 +1,13 @@
 @import "bootstrap_manage";
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
 
+// Mixins
+@mixin font-group {
+  font-family: $main_fontFamily;
+  font-style: normal;
+  font-weight: 500;
+}
+
 // Variables
 $lightGreen_color: #F3F9F6;
 $main_color: #0C8543;
@@ -38,16 +45,6 @@ $main_fontFamily: 'Montserrat', sans-serif;
     }
   }
 
-  .logoCommon {
-    text-align: center;
-    width: 150px;
-    height: 50px;
-    @include media-breakpoint-up(lg) {
-      width: 168px;
-      height: 56px;
-    }
-  }
-
   &__nav {
     display: flex;
     flex-direction: column;
@@ -62,9 +59,7 @@ $main_fontFamily: 'Montserrat', sans-serif;
     }
 
     a {
-      font-family: $main_fontFamily;
-      font-style: normal;
-      font-weight: 500;
+      @include font-group;
       font-size: 14px;
       line-height: 17px;
       color: #FFFFFF;
@@ -84,12 +79,20 @@ $main_fontFamily: 'Montserrat', sans-serif;
   }
 
   &__rights {
-    font-family: $main_fontFamily;
-    font-style: normal;
-    font-weight: 500;
+    @include font-group;
     font-size: 12px;
     line-height: 18px;
     color: #FFFFFF;
+  }
+}
+
+.logoCommon {
+  text-align: center;
+  width: 150px;
+  height: 50px;
+  @include media-breakpoint-up(lg) {
+    width: 168px;
+    height: 56px;
   }
 }
 
@@ -117,9 +120,7 @@ $main_fontFamily: 'Montserrat', sans-serif;
   }
 
   &__text {
-    font-family: $main_fontFamily;
-    font-style: normal;
-    font-weight: 500;
+    @include font-group;
     font-size: 16px;
     line-height: 24px;
     @include media-breakpoint-up(lg) {
@@ -132,6 +133,7 @@ $main_fontFamily: 'Montserrat', sans-serif;
         font-weight: 600;
         line-height: 26px;
         text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 0;
         @include media-breakpoint-up(lg) {
           font-size: 45px;
           line-height: 60px;
@@ -146,6 +148,61 @@ $main_fontFamily: 'Montserrat', sans-serif;
           font-size: 27px;
           line-height: 36px;
         }
+      }
+    }
+
+    &_green {
+      color: $main_color;
+    }
+  }
+}
+
+.cardItems {
+  padding-top: 25px;
+  @include media-breakpoint-up(lg) {
+    padding-top: 50px;
+  }
+}
+
+.cardItem {
+  background-color: $lightGreen_color;
+  text-align: center;
+  border-radius: 8px;
+  padding: 20px 16px;
+  height: 100%;
+  @include media-breakpoint-up(lg) {
+    padding: 30px 18px;
+  }
+
+  &__icon {
+    width: 60px;
+    height: 60px;
+    @include media-breakpoint-up(lg) {
+      width: 70px;
+      height: 70px;
+    }
+  }
+
+  &__text {
+    @include font-group;
+    font-size: 16px;
+    line-height: 21px;
+    padding-top: 15px;
+    @include media-breakpoint-up(lg) {
+      font-size: 21px;
+      line-height: 27px;
+    }
+
+    &_desktop {
+      display: none;
+      @include media-breakpoint-up(lg) {
+        display: block;
+      }
+    }
+
+    &_mobile {
+      @include media-breakpoint-up(lg) {
+        display: none;
       }
     }
   }
