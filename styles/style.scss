@@ -195,13 +195,14 @@ $main_fontFamily: 'Montserrat', sans-serif;
   @include media-breakpoint-up(lg) {
     padding: 30px 18px;
   }
-&_p-sm {
-  padding: 16px 18px;
-}
 
-&_green {
-  background-color: $main_color;
-}
+  &_p-sm {
+    padding: 16px 18px;
+  }
+
+  &_green {
+    background-color: $main_color;
+  }
 
   &__icon {
     width: 60px;
