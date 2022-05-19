@@ -19,6 +19,7 @@ $main_fontFamily: 'Montserrat', sans-serif;
   @include font-group;
   font-size: 16px;
   line-height: 24px;
+  margin-bottom: 0;
   @include media-breakpoint-up(lg) {
     font-size: 18px;
     line-height: 26px;
@@ -40,6 +41,7 @@ $main_fontFamily: 'Montserrat', sans-serif;
       font-size: 20px;
       font-weight: 700;
       line-height: 26px;
+      margin-bottom: 15px;
       @include media-breakpoint-up(lg) {
         font-size: 27px;
         line-height: 36px;
@@ -149,6 +151,13 @@ $main_fontFamily: 'Montserrat', sans-serif;
     background-color: $gray_color;
   }
 
+  &_desktop {
+    display: none;
+    @include media-breakpoint-up(lg) {
+      display: block;
+    }
+  }
+
   &__text {
     &_green {
       color: $main_color;
@@ -186,6 +195,13 @@ $main_fontFamily: 'Montserrat', sans-serif;
   @include media-breakpoint-up(lg) {
     padding: 30px 18px;
   }
+&_p-sm {
+  padding: 16px 18px;
+}
+
+&_green {
+  background-color: $main_color;
+}
 
   &__icon {
     width: 60px;
@@ -193,6 +209,14 @@ $main_fontFamily: 'Montserrat', sans-serif;
     @include media-breakpoint-up(lg) {
       width: 70px;
       height: 70px;
+    }
+  }
+
+  &__image {
+    width: 121%;
+    margin: -16px -18px 0 -18px;
+    @include media-breakpoint-up(xl) {
+      width: auto;
     }
   }
 
@@ -217,6 +241,10 @@ $main_fontFamily: 'Montserrat', sans-serif;
       @include media-breakpoint-up(lg) {
         display: none;
       }
+    }
+
+    &_white {
+      color: #FFFFFF;
     }
   }
 }
@@ -243,12 +271,11 @@ $main_fontFamily: 'Montserrat', sans-serif;
     }
   }
 
-  &__title {
-    margin-bottom: 15px;
-  }
-
   &__desc {
     margin-bottom: 20px;
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 0;
+    }
   }
 
   &__images {
@@ -285,6 +312,21 @@ $main_fontFamily: 'Montserrat', sans-serif;
           height: 86.68px;
         }
       }
+    }
+  }
+}
+
+.warrantyContainer {
+  &__image {
+    width: 170px;
+    height: 160px;
+    margin-bottom: 20px;
+    @include media-breakpoint-up(lg) {
+      width: 254.92px;
+      height: 240px;
+      margin-bottom: 0;
+      position: absolute;
+      top: -120px;
     }
   }
 }
