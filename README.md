@@ -1,6 +1,6 @@
 # Partner Landing
 > Skills Test for Siren Group.
-> Live demo [_here_](https://www.example.com).
+> Live demo [_here_](https://marat-medvedev.github.io/Partner-Landing/).
 
 ## Technologies Used
 - Webpack - version 5.72.1
